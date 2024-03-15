@@ -1,0 +1,169 @@
+package com.bharath.MYPROJECT;
+
+import java.util.Scanner;
+public class Online_shopping 
+{
+	Scanner sc=new Scanner(System.in);
+	int a,b;
+	void shop()
+	{
+		System.out.println("====WELCOME TO ORGANIC STORE=====");
+		System.out.println("--------------------------");
+		new Online_shopping().list();
+		System.out.print("PLEASE ENTER YOUR CHOICE:");
+		a=sc.nextInt();
+		System.out.println("your entered choice is: "+a);
+		if(a>4)
+		{
+			new Online_shopping().list();
+			System.out.print("PLEASE ENTER YOUR CHOICE:");
+			a=sc.nextInt();
+			System.out.println("your entered choice is: "+a);
+		}
+		System.out.println("-----------------------");
+		if(a==1)
+		{
+			new Online_shopping().fruits();
+			System.out.println("please enter your required fruit");
+			new Online_shopping().billfruits();
+		}
+		
+	}
+	void list()
+	{
+		System.out.println("AVAILABLE PRODUCTS IN THE STORE");
+		System.out.println("1)FRUITS");
+		System.out.println("2)VEGETABLES");
+		System.out.println("3)COSMETICS");
+		System.out.println("4)MASALA POWDER");
+		
+	}
+	void fruits()
+	{
+		System.out.println("125----MANGOES---1kg is 50rs");
+		System.out.println("126----APPLES---1kg is 100rs");
+		System.out.println("127----BANANAS---1kg is 25rs");
+		System.out.println("128----PAPAYA---1kg is 44rs");
+		System.out.println("129----GRAPES---1kg is 60rs");
+		System.out.println("130----ORANGES---1kg is 50rs");
+	}
+	int mangoes()
+	{
+		System.out.println("mangoes are kings in summer seaseons good choice: "+b);
+		System.out.println("how many kgs do you want: ");
+		int c=sc.nextInt();
+		int d=c*50;
+		System.out.println("bill of mangoes are: "+d);
+		return d;
+	}
+	int apples()
+	{
+		System.out.println("apples keeps you doctor away good choice...");
+		System.out.println("how many kgs do you want:");
+		int f=sc.nextInt();
+		int g=f*100;
+		System.out.println("bill of apples are: "+g);
+		return g;
+	}
+	int bananas()
+	{
+		System.out.println("bananas good choice...");
+		System.out.println("how many kgs do you want:");
+		int h=sc.nextInt();
+		int i=h*25;
+		System.out.println("bill of bananas are: "+i);
+		return i;
+	}
+	int papaya()
+	{
+		System.out.println("papaya  good choice...");
+		System.out.println("how many kgs do you want:");
+		int j=sc.nextInt();
+		int k=j*65;
+		System.out.println("bill of papaya are: "+k);
+		return k;
+	}
+	int grapes()
+	{
+		System.out.println("grapes good for health good choice...");
+		System.out.println("how many kgs do you want:");
+		int l=sc.nextInt();
+		int m=l*60;
+		System.out.println("bill of grapes are: "+m);
+		return m;
+	}
+	int oranges()
+	{
+		System.out.println("oranges high in vitamins c good choice...");
+		System.out.println("how many kgs do you want:");
+		int c=sc.nextInt();
+		int d=c*50;
+		System.out.println("bill of oranges are: "+d);
+		return d;
+	}
+	void billfruits()
+	{
+		b=sc.nextInt();
+		if(b==125)
+		{
+			new Online_shopping().mangoes();
+		}
+		else if(b==126)
+		{
+			new Online_shopping().apples();
+		}
+		else if(b==127)
+		{
+			new Online_shopping().bananas();
+		}
+		else if(b==128)
+		{
+			new Online_shopping().papaya();
+		}
+		else if(b==129)
+		{
+			new Online_shopping().grapes();
+		}
+		else if(b==130)
+		{
+			new Online_shopping().oranges();
+		}
+	    else
+	    {
+		   System.out.println(" enetred product is not in list...");
+		   new Online_shopping().billfruits();
+	    }
+		System.out.println("do you want any other item: 1)YES 2)NO");
+		int opt=sc.nextInt();
+		if(opt==1)
+		{
+			new Online_shopping().fruits();
+			new Online_shopping().billfruits();
+		}
+		else
+		{
+			System.out.println("THANK YOU......");
+			
+		}
+		
+	}
+	
+	void totalbill()
+	{
+		int total;
+		if(b==125||b==126)
+		{
+			int w=new Online_shopping().mangoes();
+			int w1=new Online_shopping().apples();
+			total=w+w1;
+			System.out.println("total bill is: "+total);
+		}
+		
+	}
+	public static void main(String[] args) 
+	{
+		new Online_shopping().shop();
+		
+	}
+
+}
